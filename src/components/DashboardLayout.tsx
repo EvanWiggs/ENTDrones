@@ -36,7 +36,7 @@ interface DashboardLayoutProps {
 
 export function DashboardLayout(props: DashboardLayoutProps) {
   const [tab, setTab] = useState<Tab>("feed");
-  const criticalAlerts = useMemo(() => props.pois.filter((poi) => poi.severity === "critical").length + 2, [props.pois]);
+  const criticalAlerts = useMemo(() => props.pois.filter((poi) => poi.severity === "critical").length, [props.pois]);
 
   return (
     <main className="flex h-dvh w-screen gap-3 overflow-hidden p-3">
@@ -46,9 +46,9 @@ export function DashboardLayout(props: DashboardLayoutProps) {
             <div>
               <div className="flex items-center gap-2">
                 <RadioTower className="h-5 w-5 text-primary" />
-                <h1 className="text-lg font-semibold">AeroRescue Swarm Command</h1>
+                <h1 className="text-lg font-semibold">GridSwarm™ Command</h1>
               </div>
-              <p className="mt-1 text-xs text-muted-foreground">Norman, Oklahoma rapid damage assessment</p>
+              <p className="mt-1 text-xs text-muted-foreground">Moore, OK — Rapid damage assessment</p>
             </div>
             <Badge className="border-emerald-400/40 bg-emerald-500/14 text-emerald-100">Active Search</Badge>
           </header>

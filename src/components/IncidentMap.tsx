@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Layers, LocateFixed, MapPinPlus, Trash2 } from "lucide-react";
-import { NORMAN_CENTER, poiTypes, searchArea, severities } from "../data/mockData";
+import { MOORE_CENTER, poiTypes, searchArea, severities } from "../data/mockData";
 import { formatCoordinates, formatTimestamp, severityClasses, severityDot } from "../lib/format";
 import type { Drone, POI, POIType, Severity } from "../types";
 import { Badge } from "./ui/badge";
@@ -113,8 +113,8 @@ export function IncidentMap({
       .then(() => {
         if (!containerRef.current || mapRef.current) return;
         const map = new google.maps.Map(containerRef.current, {
-          center: toLatLng(NORMAN_CENTER),
-          zoom: 13,
+          center: toLatLng(MOORE_CENTER),
+          zoom: 15,
           tilt: 45,
           heading: 338,
           mapTypeControl: false,
@@ -256,7 +256,7 @@ export function IncidentMap({
         <div className="pointer-events-auto rounded-lg border border-border/80 bg-card/88 p-3 shadow-panel backdrop-blur">
           <div className="mb-2 flex items-center gap-2 text-sm font-semibold">
             <Layers className="h-4 w-4 text-primary" />
-            Norman disaster area
+            Westmoore Disaster Area
           </div>
           <div className="grid grid-cols-2 gap-2">
             <Select value={selectedType} onChange={(event) => onTypeChange(event.target.value as POIType)}>
